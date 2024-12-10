@@ -92,17 +92,17 @@ class InventorySystemManagement{
     })
 
     if(product){
-      // console.log(product)
+      //todo: product found
+      return JSON.stringify(product.toJSON(), null, 2);
     }
     else{
       console.log("Product not found. Try again!")
+      return null
     }
   }
 
   //todo: Products in JSON format
-  toJSON(){
-    return this.products.map((product)=> product.toJSON())
-  }
+
 }
 
 
@@ -115,8 +115,8 @@ category1.addSubcategory("Laptop");
 const inventorySystem = new InventorySystemManagement();
 inventorySystem.addProduct(1,'phone',999.99, '01-01-2025',100,category1,supplier1)
 supplier1.addProduct(category1.name)
-inventorySystem.getProductDetails('phone')
+let data = inventorySystem.getProductDetails('phone')
 
 
 //todo: Output in JSON format
-console.log(JSON.stringify(inventorySystem.toJSON(),null,2))
+console.log(data)
