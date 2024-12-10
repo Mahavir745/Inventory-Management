@@ -133,7 +133,7 @@ inventorySystem.addProduct(1, 'phone', 999.99, '01-01-2025', 100, category1, sup
 supplier1.addProduct(category1.name)
 
 
-let data = inventorySystem.getProductDetails('phomne')
+let data = inventorySystem.getProductDetails('phone')
 
 
 //todo: Output in JSON format
