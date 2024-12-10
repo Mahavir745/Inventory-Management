@@ -10,6 +10,23 @@ class Product {
     this.category = category;
     this.supplier = supplier;
   }
+
+  //todo: product as a JSON object
+
+  toJSON(){
+    return {
+      id: this.id,
+      name: this.name,
+      price: this.price,
+      expiry_date : this.expiry_date,
+      quantity:this.quantity,
+      category: this.category,
+      supplier: {
+        name: this.supplier.name,
+        contactInfo: this.supplier.contactInfo
+      }
+    }
+  }
 }
 
 //todo: Category Class
@@ -22,6 +39,14 @@ class Category{
 
   addSubcategory(subcategory){
     this.subcategories.push(subcategory)
+  }
+
+  // todo: category as json
+  toJSON(){
+    return{
+      name: this.name,
+      subcategories: this.subcategories
+    }
   }
 }
 
@@ -36,6 +61,15 @@ class Supplier {
 
   addProduct(product){
     this.products.push(product)
+  }
+
+  // todo: supplier as json
+  toJSON(){
+    return{
+      name: this.name,
+      contactInfo: this.contactInfo,
+      products:this.products
+    }
   }
 }
 
@@ -58,11 +92,16 @@ class InventorySystemManagement{
     })
 
     if(product){
-      console.log(product)
+      // console.log(product)
     }
     else{
       console.log("Product not found. Try again!")
     }
+  }
+
+  //todo: Products in JSON format
+  toJSON(){
+    return this.products.map((product)=> product.toJSON())
   }
 }
 
@@ -78,3 +117,6 @@ inventorySystem.addProduct(1,'phone',999.99, '01-01-2025',100,category1,supplier
 supplier1.addProduct(category1.name)
 inventorySystem.getProductDetails('phone')
 
+
+//todo: Output in JSON format
+console.log(JSON.stringify(inventorySystem.toJSON(),null,2))
