@@ -23,7 +23,8 @@ class Product {
       category: this.category,
       supplier: {
         name: this.supplier.name,
-        contactInfo: this.supplier.contactInfo
+        contactInfo: this.supplier.contactInfo,
+        product: this.supplier.products
       }
     }
   }
@@ -116,7 +117,7 @@ class InventorySystemManagement {
       return JSON.stringify(error.toJSON(),null,2)
     }
   }
-
+  inventorySystem
   //todo: Products in JSON format
 
 }
@@ -130,8 +131,9 @@ category1.addSubcategory("Laptop");
 
 const inventorySystem = new InventorySystemManagement();
 inventorySystem.addProduct(1, 'phone', 999.99, '01-01-2025', 100, category1, supplier1)
-supplier1.addProduct(category1.name)
 
+console.log(category1.name)
+supplier1.addProduct(category1.name)
 
 let data = inventorySystem.getProductDetails('phone')
 
