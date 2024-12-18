@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "phone",
+      "price": 999.99,
+      "expiry_date": "01-01-2029",
+      "quantity": 100,
+      "category": {
+        "name": "Electronics",
+        "subcategories": [
+          "Mobile",
+          "Laptop"
+        ]
+      },
+      "supplier": {
+        "name": "Mahavir",
+        "contactInfo": "7870767196",
+        "products": [
+          "phone"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Raisins",
+      "price": 499.99,
+      "expiry_date": "01-03-2025",
+      "quantity": 10,
+      "category": {
+        "name": "Dry Fruits",
+        "subcategories": [
+          "Dates",
+          "Almonds"
+        ]
+      },
+      "supplier": {
+        "name": "Mahavir",
+        "contactInfo": "7870767196",
+        "products": [
+          "Raisins"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "Tilkut",
+      "price": 299.99,
+      "expiry_date": "01-03-2025",
+      "quantity": 8,
+      "category": {
+        "name": "Sweet",
+        "subcategories": [
+          "Winter Sweets",
+          "Jaggery Sweets"
+        ]
+      },
+      "supplier": {
+        "name": "Mahavir",
+        "contactInfo": "7870767196",
+        "products": [
+          "Tilkut"
+        ]
+      }
+    }
+  ]
+}
